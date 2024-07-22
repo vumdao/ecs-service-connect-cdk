@@ -13,12 +13,14 @@
   - [Amazon ECS service discovery](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html)
 
 ## Table Of Contents
-* [Amazon ECS Service Connect](#Vouch-Proxy-Overview)
+* [Amazon ECS Service Connect](#Amazon-ECS-Service-Connect)
 * [AWS ECS Service Connect vs Service Discovery](#AWS-ECS-Service-Connect-vs-Service-Discovery)
 * [Deploying Sample Yelb Application for service connect with Amazon ECS and AWS CDK Typescript](#Deploying-Sample-Yelb-Application-for-service-connect-with-Amazon-ECS-and-AWS-CDK-Typescript)
 * [Walkthrough](#Walkthrough)
 * [Cleaning up](#Cleaning-up)
 * [Conclusion](#Conclusion)
+
+---
 
 ## 🚀 Amazon ECS Service Connect <a name="Amazon-ECS-Service-Connect"></a>
 - Amazon ECS Service Connect enables easy communication between microservices and across Amazon Virtual Private Clouds (Amazon VPCs) by leveraging AWS Cloud Map namespaces and logical service names. This allows you to seamlessly distribute traffic between your Amazon ECS tasks without having to deploy, configure, and maintain load balancers.
