@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  <div><b>Single-Sign-On By Vouch Proxy And AWS Cognito</b></div>
+  <div><b>ECS service-to-service communication</b></div>
 </h1>
 
 ## Abstract
