@@ -29,7 +29,7 @@
   <img src=images/serviceconnect.png width=900>
 
 ## 🚀 AWS ECS Service Connect vs Service Discovery <a name="AWS-ECS-Service-Connect-vs-Service-Discovery"></a>
-- Service Connect offers a significant advantage over plain Cloud Map for service discovery by providing faster failover when service instances go down. With DNS-based lookup in Cloud Map, the client may take some time (depending on the TTL settings) to recognize that it needs a new IP address when a service goes down. This delay can be exacerbated if the client library caches the same IP address for an extended period, or if the client's retry logic repeatedly attempts to connect to the same IP address after a failure.
+- Service discovery offers a significant advantage over plain Cloud Map for service discovery by providing faster failover when service instances go down. With DNS-based lookup in Cloud Map, the client may take some time (depending on the TTL settings) to recognize that it needs a new IP address when a service goes down. This delay can be exacerbated if the client library caches the same IP address for an extended period, or if the client's retry logic repeatedly attempts to connect to the same IP address after a failure.
 - Service Connect, on the other hand, introduces a sidecar "proxy" container that intercepts outgoing connections and routes them to the correct destinations. Instead of relying on potentially stale DNS entries, the sidecar uses API calls to Cloud Map to look up the IP address of a healthy service instance in real-time. This method provides the standard benefits of a service mesh, like Envoy, with the added advantage that Service Connect manages the sidecar for you. For a more detailed discussion of these benefits, see the guide on migrating existing Amazon ECS services from service discovery to Amazon ECS Service Connect.
 - Since Service Connect doesn't rely on DNS, it avoids registering even private DNS entries. Instead, it registers endpoints with Cloud Map that are privately discoverable only through API calls. There currently appears to be no option to configure Service Connect to register service names in DNS.
 
@@ -63,7 +63,7 @@ git clone git@github.com:vumdao/ecs-service-connect-cdk.git && cd ecs-service-co
 pnpm install
 
 # Update your AWS account in `src/lib/shared/constants.ts` at `CDK_DEFAULT_ACCOUNT` and target region in `src/lib/shared/environment.ts` at `devEnv`
-sed -i 's/107858015234/234567890123/g' src/lib/shared/constants.ts
+sed -i 's/123456789012/234567890123/g' src/lib/shared/constants.ts
 sed -i 's/region: .*,/region: "us-west-2",/g' src/lib/shared/environment.ts
 
 # Update Hosted zone name and zone ID in `src/lib/shared/constants.ts` with yours AWS hosted zone to create domain for yelb application eg. yelb.simflexcloud.com
